@@ -2,41 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Dark Theme CSS Variables - Slate/Cyan */
+/* Modern Dark Theme CSS Variables - Deep Blue */
 :root {
-  /* Surface colors - Slate based */
-  --md-surface: #0F172A;
-  --md-surface-1dp: #1E293B;
-  --md-surface-2dp: #1E293B;
-  --md-surface-3dp: #334155;
-  --md-surface-4dp: #334155;
-  --md-surface-6dp: #475569;
-  --md-surface-8dp: #475569;
-  --md-surface-12dp: #64748B;
-  --md-surface-16dp: #64748B;
-  --md-surface-24dp: #94A3B8;
+  /* Surface colors - Deep blue based */
+  --md-surface: #0A0F1E;
+  --md-surface-1dp: #111827;
+  --md-surface-2dp: #1A2332;
+  --md-surface-3dp: #1F2937;
+  --md-surface-4dp: #243044;
+  --md-surface-6dp: #2D3A50;
+  --md-surface-8dp: #374357;
+  --md-surface-12dp: #4B5563;
+  --md-surface-16dp: #6B7280;
+  --md-surface-24dp: #9CA3AF;
   
-  /* Primary colors - Cyan */
-  --md-primary: #06B6D4;
-  --md-primary-light: #22D3EE;
-  --md-primary-dark: #0891B2;
+  /* Primary colors - Vibrant Blue */
+  --md-primary: #3B82F6;
+  --md-primary-light: #60A5FA;
+  --md-primary-dark: #2563EB;
   
-  /* Secondary colors - Amber */
-  --md-secondary: #F59E0B;
-  --md-secondary-dark: #D97706;
+  /* Secondary colors - Violet */
+  --md-secondary: #8B5CF6;
+  --md-secondary-dark: #7C3AED;
   
-  /* Error color - Rose */
-  --md-error: #F43F5E;
+  /* Accent - Sky Blue */
+  --md-accent: #0EA5E9;
+  
+  /* Error color - Red */
+  --md-error: #EF4444;
   
   /* Success color - Emerald */
   --md-success: #10B981;
   
+  /* Warning color - Amber */
+  --md-warning: #F59E0B;
+  
   /* On colors (text on surfaces) */
-  --md-on-surface: rgba(255, 255, 255, 0.92);
-  --md-on-surface-medium: rgba(255, 255, 255, 0.70);
-  --md-on-surface-disabled: rgba(255, 255, 255, 0.45);
-  --md-on-primary: #000000;
-  --md-on-secondary: #000000;
+  --md-on-surface: rgba(255, 255, 255, 0.95);
+  --md-on-surface-medium: rgba(255, 255, 255, 0.75);
+  --md-on-surface-disabled: rgba(255, 255, 255, 0.50);
+  --md-on-primary: #FFFFFF;
+  --md-on-secondary: #FFFFFF;
   --md-on-error: #FFFFFF;
 }
 

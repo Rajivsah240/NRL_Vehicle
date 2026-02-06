@@ -322,8 +322,8 @@ const DriverDashboard = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo & Title */}
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
-                <span className="text-on-primary font-bold text-lg">🚗</span>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-surface-6dp">
+                <img src="/assets/Logo-new.png" alt="NumaliRide" className="w-9 h-9 object-contain" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-on-surface">Driver Dashboard</h1>
@@ -338,7 +338,7 @@ const DriverDashboard = () => {
                 <p className="text-xs text-on-surface-disabled">Pending Requests</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-primary">{trips.filter(t => t.status === 'Completed').length}</p>
+                <p className="text-2xl font-bold text-primary">{trips.filter(t => t.status === 'Completed' && new Date(t.completedAt || t.updatedAt).toDateString() === new Date().toDateString()).length}</p>
                 <p className="text-xs text-on-surface-disabled">Completed Today</p>
               </div>
             </div>

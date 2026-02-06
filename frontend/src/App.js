@@ -15,7 +15,8 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background">
+        <img src="/assets/Logo-new.png" alt="NumaliRide" className="w-20 h-20 mb-4 animate-pulse" />
         <div className="spinner"></div>
       </div>
     );

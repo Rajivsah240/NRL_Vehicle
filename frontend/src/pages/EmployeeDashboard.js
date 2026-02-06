@@ -228,10 +228,8 @@ const EmployeeDashboard = () => {
               
               {/* Logo */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                  <svg className="w-6 h-6 text-on-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 overflow-hidden bg-surface-6dp">
+                  <img src="/assets/Logo-new.png" alt="NumaliRide" className="w-9 h-9 object-contain" />
                 </div>
                 <div className="hidden sm:block">
                   <h1 className="text-xl font-bold text-on-surface">NumaliRide</h1>

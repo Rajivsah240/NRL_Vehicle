@@ -11,13 +11,13 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-// Custom vehicle marker icons based on status - NumaliRide Cyan/Teal Palette
+// Custom vehicle marker icons based on status - NumaliRide Vibrant Blue Palette
 const getVehicleIcon = (status) => {
   const configs = {
     'Available': { color: '#10B981', glow: 'rgba(16, 185, 129, 0.4)' },       // Emerald (Success)
     'Busy': { color: '#F59E0B', glow: 'rgba(245, 158, 11, 0.4)' },            // Amber (Warning)
-    'In Transit': { color: '#06B6D4', glow: 'rgba(6, 182, 212, 0.4)' },       // Cyan (Primary)
-    'Not Available': { color: '#F43F5E', glow: 'rgba(244, 63, 94, 0.4)' }     // Rose (Error)
+    'In Transit': { color: '#3B82F6', glow: 'rgba(59, 130, 246, 0.4)' },      // Blue (Primary)
+    'Not Available': { color: '#EF4444', glow: 'rgba(239, 68, 68, 0.4)' }     // Red (Error)
   };
 
   const config = configs[status] || { color: '#6b7280', glow: 'rgba(107, 114, 128, 0.4)' };

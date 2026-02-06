@@ -6,60 +6,66 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Modern Dark Theme Colors - Slate based
+        // Modern Dark Theme - Deep Blue based
         surface: {
-          DEFAULT: '#0F172A',   // Slate 900
-          '1dp': '#1E293B',     // Slate 800
-          '2dp': '#1E293B',
-          '3dp': '#334155',     // Slate 700
-          '4dp': '#334155',
-          '6dp': '#475569',     // Slate 600
-          '8dp': '#475569',
-          '12dp': '#64748B',    // Slate 500
-          '16dp': '#64748B',
-          '24dp': '#94A3B8',    // Slate 400
+          DEFAULT: '#0A0F1E',   // Deep navy
+          '1dp': '#111827',     // Slightly lighter
+          '2dp': '#1A2332',
+          '3dp': '#1F2937',     // Card backgrounds
+          '4dp': '#243044',
+          '6dp': '#2D3A50',     // Elevated surfaces
+          '8dp': '#374357',
+          '12dp': '#4B5563',    // Borders
+          '16dp': '#6B7280',
+          '24dp': '#9CA3AF',    // Subtle text
         },
-        background: '#0F172A',
-        // Primary - Cyan/Teal
+        background: '#0A0F1E',
+        // Primary - Vibrant Blue
         primary: {
-          DEFAULT: '#06B6D4',    // Cyan 500
-          light: '#22D3EE',      // Cyan 400
-          lighter: '#67E8F9',    // Cyan 300
-          dark: '#0891B2',       // Cyan 600
-          darker: '#0E7490',     // Cyan 700
-          50: '#ECFEFF',
-          100: '#CFFAFE',
-          200: '#A5F3FC',
-          300: '#67E8F9',
-          400: '#22D3EE',
-          500: '#06B6D4',
-          600: '#0891B2',
-          700: '#0E7490',
-          800: '#155E75',
-          900: '#164E63',
+          DEFAULT: '#3B82F6',    // Blue 500 - Vibrant
+          light: '#60A5FA',      // Blue 400
+          lighter: '#93C5FD',    // Blue 300
+          dark: '#2563EB',       // Blue 600
+          darker: '#1D4ED8',     // Blue 700
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#3B82F6',
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#1E3A8A',
         },
-        // Secondary - Amber/Gold
+        // Secondary - Vibrant Violet/Purple
         secondary: {
-          DEFAULT: '#F59E0B',    // Amber 500
-          light: '#FBBF24',      // Amber 400
-          dark: '#D97706',       // Amber 600
-          darker: '#B45309',
-          50: '#FFFBEB',
-          100: '#FEF3C7',
-          200: '#FDE68A',
-          300: '#FCD34D',
-          400: '#FBBF24',
-          500: '#F59E0B',
-          600: '#D97706',
-          700: '#B45309',
-          800: '#92400E',
-          900: '#78350F',
+          DEFAULT: '#8B5CF6',    // Violet 500
+          light: '#A78BFA',      // Violet 400
+          dark: '#7C3AED',       // Violet 600
+          darker: '#6D28D9',
+          50: '#F5F3FF',
+          100: '#EDE9FE',
+          200: '#DDD6FE',
+          300: '#C4B5FD',
+          400: '#A78BFA',
+          500: '#8B5CF6',
+          600: '#7C3AED',
+          700: '#6D28D9',
+          800: '#5B21B6',
+          900: '#4C1D95',
         },
-        // Error color - Rose
+        // Accent - Electric Sky Blue
+        accent: {
+          DEFAULT: '#0EA5E9',    // Sky 500
+          light: '#38BDF8',      // Sky 400
+          dark: '#0284C7',       // Sky 600
+        },
+        // Error color - Red
         error: {
-          DEFAULT: '#F43F5E',    // Rose 500
-          light: '#FB7185',
-          dark: '#E11D48',
+          DEFAULT: '#EF4444',    // Red 500
+          light: '#F87171',
+          dark: '#DC2626',
         },
         // Success - Emerald
         success: {
@@ -67,14 +73,20 @@ module.exports = {
           light: '#34D399',
           dark: '#059669',
         },
+        // Warning - Amber
+        warning: {
+          DEFAULT: '#F59E0B',
+          light: '#FBBF24',
+          dark: '#D97706',
+        },
         // On colors (text/icons on surfaces)
         'on-surface': {
-          DEFAULT: 'rgba(255, 255, 255, 0.92)',  // High emphasis
-          medium: 'rgba(255, 255, 255, 0.70)',   // Medium emphasis
-          disabled: 'rgba(255, 255, 255, 0.45)', // Disabled
+          DEFAULT: 'rgba(255, 255, 255, 0.95)',  // High emphasis
+          medium: 'rgba(255, 255, 255, 0.75)',   // Medium emphasis
+          disabled: 'rgba(255, 255, 255, 0.50)', // Disabled
         },
-        'on-primary': '#000000',
-        'on-secondary': '#000000',
+        'on-primary': '#FFFFFF',
+        'on-secondary': '#FFFFFF',
         'on-error': '#FFFFFF',
         // Legacy support
         refinery: {

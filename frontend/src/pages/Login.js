@@ -47,10 +47,8 @@ const Login = () => {
         <div className="text-center mb-8 fade-in">
           <div className="relative inline-block mb-6">
             <div className="absolute inset-0 bg-primary/30 rounded-2xl blur-lg"></div>
-            <div className="relative bg-surface-8dp w-24 h-24 mx-auto rounded-2xl flex items-center justify-center shadow-2xl border border-white/10">
-              <svg className="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h8m-8 5h8m-4 5v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2m14-2v2m0-6V7a2 2 0 00-2-2h-1m-4 0V3m0 2H9m0 0a2 2 0 00-2 2m2-2a2 2 0 012 2" />
-              </svg>
+            <div className="relative w-24 h-24 mx-auto rounded-2xl flex items-center justify-center shadow-2xl border border-white/10 overflow-hidden bg-surface-8dp">
+              <img src="/assets/Logo-new.png" alt="NumaliRide Logo" className="w-20 h-20 object-contain" />
             </div>
           </div>
           <h1 className="text-4xl font-bold text-on-surface mb-3 tracking-tight">
