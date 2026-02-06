@@ -1,5 +1,6 @@
 const Vehicle = require('../models/Vehicle');
 const User = require('../models/User');
+const { getIO, emitToDepartment } = require('../socket/socketHandler');
 
 // @desc    Get all vehicles (filtered by department for employees)
 exports.getVehicles = async (req, res) => {
@@ -167,6 +168,16 @@ exports.updateVehicleStatus = async (req, res) => {
     vehicle.status = status;
     await vehicle.save();
 
+    // Emit socket event for real-time update
+    try {
+      emitToDepartment(vehicle.department, 'vehicle_status_updated', {
+        vehicleId: vehicle._id,
+        status: status
+      });
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
+
     res.status(200).json({
       success: true,
       vehicle
@@ -220,6 +231,20 @@ exports.assignVehicle = async (req, res) => {
     const updatedVehicle = await Vehicle.findById(vehicleId)
       .populate('currentDriver', 'name phone');
 
+    // Emit socket events for real-time update
+    try {
+      emitToDepartment(vehicle.department, 'vehicle_driver_updated', {
+        vehicleId: vehicle._id,
+        currentDriver: updatedVehicle.currentDriver
+      });
+      emitToDepartment(vehicle.department, 'vehicle_status_updated', {
+        vehicleId: vehicle._id,
+        status: 'Available'
+      });
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
+
     res.status(200).json({
       success: true,
       message: 'Vehicle assigned successfully',
@@ -259,6 +284,20 @@ exports.unassignVehicle = async (req, res) => {
     // Set to 'Available' when driver releases - 'Not Available' is admin-controlled only
     vehicle.status = 'Available';
     await vehicle.save();
+
+    // Emit socket events for real-time update
+    try {
+      emitToDepartment(vehicle.department, 'vehicle_driver_updated', {
+        vehicleId: vehicle._id,
+        currentDriver: null
+      });
+      emitToDepartment(vehicle.department, 'vehicle_status_updated', {
+        vehicleId: vehicle._id,
+        status: 'Available'
+      });
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
 
     res.status(200).json({
       success: true,
@@ -333,6 +372,16 @@ exports.adminUpdateVehicleStatus = async (req, res) => {
 
     vehicle.status = status;
     await vehicle.save();
+
+    // Emit socket event for real-time update
+    try {
+      emitToDepartment(vehicle.department, 'vehicle_status_updated', {
+        vehicleId: vehicle._id,
+        status: status
+      });
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
 
     res.status(200).json({
       success: true,

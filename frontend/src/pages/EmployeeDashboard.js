@@ -234,8 +234,8 @@ const EmployeeDashboard = () => {
                   </svg>
                 </div>
                 <div className="hidden sm:block">
-                  <h1 className="text-xl font-bold text-on-surface">NRL Vehicle</h1>
-                  <p className="text-xs text-on-surface-disabled">Dispatch System</p>
+                  <h1 className="text-xl font-bold text-on-surface">NumaliRide</h1>
+
                 </div>
               </div>
             </div>

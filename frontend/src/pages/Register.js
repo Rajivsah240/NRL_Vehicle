@@ -101,7 +101,7 @@ const Register = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-on-surface mb-2 tracking-tight">Join NRL Vehicle</h1>
+          <h1 className="text-3xl font-bold text-on-surface mb-2 tracking-tight">Join NumaliRide</h1>
           <p className="text-on-surface-medium text-sm">Create your account to get started</p>
         </div>
 

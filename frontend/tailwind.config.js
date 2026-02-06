@@ -6,74 +6,82 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Material Design Dark Theme Colors
+        // Modern Dark Theme Colors - Slate based
         surface: {
-          DEFAULT: '#121212',
-          '1dp': '#1e1e1e',   // 5% white overlay
-          '2dp': '#222222',   // 7% white overlay
-          '3dp': '#242424',   // 8% white overlay
-          '4dp': '#272727',   // 9% white overlay
-          '6dp': '#2c2c2c',   // 11% white overlay
-          '8dp': '#2e2e2e',   // 12% white overlay
-          '12dp': '#333333',  // 14% white overlay
-          '16dp': '#363636',  // 15% white overlay
-          '24dp': '#383838',  // 16% white overlay
+          DEFAULT: '#0F172A',   // Slate 900
+          '1dp': '#1E293B',     // Slate 800
+          '2dp': '#1E293B',
+          '3dp': '#334155',     // Slate 700
+          '4dp': '#334155',
+          '6dp': '#475569',     // Slate 600
+          '8dp': '#475569',
+          '12dp': '#64748B',    // Slate 500
+          '16dp': '#64748B',
+          '24dp': '#94A3B8',    // Slate 400
         },
-        // Primary - Red/Crimson from custom palette
+        background: '#0F172A',
+        // Primary - Cyan/Teal
         primary: {
-          DEFAULT: '#CC2454',    // Main primary color
-          light: '#EC646C',      // Lighter variant for hover states
-          lighter: '#f5577a',    // Even lighter
-          dark: '#be2245',       // Darker variant
-          darker: '#8c212a',     // Even darker
-          50: '#fdedee',
-          100: '#fac7cc',
-          200: '#f68f9b',
-          300: '#f34465',
-          400: '#EC646C',
-          500: '#CC2454',
-          600: '#be2245',
-          700: '#81142C',
-          800: '#490715',
-          900: '#241217',
+          DEFAULT: '#06B6D4',    // Cyan 500
+          light: '#22D3EE',      // Cyan 400
+          lighter: '#67E8F9',    // Cyan 300
+          dark: '#0891B2',       // Cyan 600
+          darker: '#0E7490',     // Cyan 700
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#06B6D4',
+          600: '#0891B2',
+          700: '#0E7490',
+          800: '#155E75',
+          900: '#164E63',
         },
-        // Secondary - Green from custom palette
+        // Secondary - Amber/Gold
         secondary: {
-          DEFAULT: '#B0D19A',
-          light: '#c8e8b5',
-          dark: '#6f9c5a',
-          darker: '#4d5d42',
-          50: '#eef6e8',
-          100: '#d5e8c8',
-          200: '#B0D19A',
-          300: '#8dba73',
-          400: '#6f9c5a',
-          500: '#4d5d42',
-          600: '#303a29',
-          700: '#151b11',
-          800: '#0a0d08',
-          900: '#050604',
+          DEFAULT: '#F59E0B',    // Amber 500
+          light: '#FBBF24',      // Amber 400
+          dark: '#D97706',       // Amber 600
+          darker: '#B45309',
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#FBBF24',
+          500: '#F59E0B',
+          600: '#D97706',
+          700: '#B45309',
+          800: '#92400E',
+          900: '#78350F',
         },
-        // Error color for dark theme
+        // Error color - Rose
         error: {
-          DEFAULT: '#CF6679',
-          dark: '#B00020',
+          DEFAULT: '#F43F5E',    // Rose 500
+          light: '#FB7185',
+          dark: '#E11D48',
+        },
+        // Success - Emerald
+        success: {
+          DEFAULT: '#10B981',    // Emerald 500
+          light: '#34D399',
+          dark: '#059669',
         },
         // On colors (text/icons on surfaces)
         'on-surface': {
-          DEFAULT: 'rgba(255, 255, 255, 0.87)',  // High emphasis
-          medium: 'rgba(255, 255, 255, 0.60)',   // Medium emphasis
-          disabled: 'rgba(255, 255, 255, 0.38)', // Disabled
+          DEFAULT: 'rgba(255, 255, 255, 0.92)',  // High emphasis
+          medium: 'rgba(255, 255, 255, 0.70)',   // Medium emphasis
+          disabled: 'rgba(255, 255, 255, 0.45)', // Disabled
         },
         'on-primary': '#000000',
         'on-secondary': '#000000',
-        'on-error': '#000000',
+        'on-error': '#FFFFFF',
         // Legacy support
         refinery: {
-          dark: '#131213',
-          blue: '#1e1e1e',
-          accent: '#CC2454',
-          light: '#CF6679',
+          dark: '#0F172A',
+          blue: '#1E293B',
+          accent: '#06B6D4',
+          light: '#22D3EE',
         }
       },
     },

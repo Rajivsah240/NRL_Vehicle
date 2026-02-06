@@ -54,9 +54,9 @@ const Login = () => {
             </div>
           </div>
           <h1 className="text-4xl font-bold text-on-surface mb-3 tracking-tight">
-            NRL Vehicle
+            NumaliRide
             <span className="block text-2xl font-medium bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Dispatch System
+
             </span>
           </h1>
           <p className="text-on-surface-medium text-sm">Numaligarh Refinery Limited</p>

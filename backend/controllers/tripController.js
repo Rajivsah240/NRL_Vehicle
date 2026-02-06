@@ -1,6 +1,6 @@
 const Trip = require('../models/Trip');
 const Vehicle = require('../models/Vehicle');
-const { getIO, getUserSockets } = require('../socket/socketHandler');
+const { getIO, getUserSockets, emitToDepartment, emitToUser } = require('../socket/socketHandler');
 
 // @desc    Create trip request (Employee only)
 exports.createTripRequest = async (req, res) => {
@@ -275,6 +275,17 @@ exports.acceptTrip = async (req, res) => {
       .populate('driverId', 'name phone')
       .populate('vehicleId', 'vehicleNumber vehicleType');
 
+    // Emit socket event to employee for real-time update
+    try {
+      emitToUser(trip.employeeId.toString(), 'trip_accepted', {
+        tripId: trip._id,
+        status: 'Accepted',
+        driverName: populatedTrip.driverId?.name
+      });
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
+
     res.status(200).json({
       success: true,
       message: 'Trip accepted',
@@ -326,6 +337,24 @@ exports.rejectTrip = async (req, res) => {
       .populate('employeeId', 'name phone department')
       .populate('driverId', 'name phone')
       .populate('vehicleId', 'vehicleNumber vehicleType');
+
+    // Emit socket events for real-time update
+    try {
+      emitToUser(trip.employeeId.toString(), 'trip_rejected', {
+        tripId: trip._id,
+        status: 'Rejected',
+        rejectionReason: trip.rejectionReason
+      });
+      // Also emit vehicle status update
+      if (populatedTrip.vehicleId?.department) {
+        emitToDepartment(populatedTrip.employeeId.department, 'vehicle_status_updated', {
+          vehicleId: trip.vehicleId,
+          status: 'Available'
+        });
+      }
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
 
     res.status(200).json({
       success: true,
@@ -385,6 +414,23 @@ exports.startTrip = async (req, res) => {
       .populate('driverId', 'name phone')
       .populate('vehicleId', 'vehicleNumber vehicleType');
 
+    // Emit socket events for real-time update
+    try {
+      emitToUser(trip.employeeId.toString(), 'trip_started', {
+        tripId: trip._id,
+        status: 'In Progress'
+      });
+      // Emit vehicle status update to department
+      if (populatedTrip.employeeId?.department) {
+        emitToDepartment(populatedTrip.employeeId.department, 'vehicle_status_updated', {
+          vehicleId: trip.vehicleId,
+          status: 'In Transit'
+        });
+      }
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
+
     res.status(200).json({
       success: true,
       message: 'Trip started',
@@ -442,6 +488,23 @@ exports.completeTrip = async (req, res) => {
       .populate('employeeId', 'name phone department')
       .populate('driverId', 'name phone')
       .populate('vehicleId', 'vehicleNumber vehicleType');
+
+    // Emit socket events for real-time update
+    try {
+      emitToUser(trip.employeeId.toString(), 'trip_completed', {
+        tripId: trip._id,
+        status: 'Completed'
+      });
+      // Emit vehicle status update to department
+      if (populatedTrip.employeeId?.department) {
+        emitToDepartment(populatedTrip.employeeId.department, 'vehicle_status_updated', {
+          vehicleId: trip.vehicleId,
+          status: 'Available'
+        });
+      }
+    } catch (socketError) {
+      console.error('Socket emit error:', socketError);
+    }
 
     res.status(200).json({
       success: true,

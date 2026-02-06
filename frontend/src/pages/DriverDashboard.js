@@ -327,7 +327,7 @@ const DriverDashboard = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-on-surface">Driver Dashboard</h1>
-                <p className="text-xs text-primary">NRL Vehicle Dispatch</p>
+                <p className="text-xs text-primary">NumaliRide</p>
               </div>
             </div>
 

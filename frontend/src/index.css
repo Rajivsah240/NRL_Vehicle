@@ -2,39 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Material Design Dark Theme CSS Variables */
+/* Modern Dark Theme CSS Variables - Slate/Cyan */
 :root {
-  /* Surface colors with elevation overlays */
-  --md-surface: #131213;
-  --md-surface-1dp: #1e1e1e;
-  --md-surface-2dp: #222222;
-  --md-surface-3dp: #242424;
-  --md-surface-4dp: #272727;
-  --md-surface-6dp: #2c2c2c;
-  --md-surface-8dp: #2e2e2e;
-  --md-surface-12dp: #333333;
-  --md-surface-16dp: #363636;
-  --md-surface-24dp: #383838;
+  /* Surface colors - Slate based */
+  --md-surface: #0F172A;
+  --md-surface-1dp: #1E293B;
+  --md-surface-2dp: #1E293B;
+  --md-surface-3dp: #334155;
+  --md-surface-4dp: #334155;
+  --md-surface-6dp: #475569;
+  --md-surface-8dp: #475569;
+  --md-surface-12dp: #64748B;
+  --md-surface-16dp: #64748B;
+  --md-surface-24dp: #94A3B8;
   
-  /* Primary colors - Red/Crimson from custom palette */
-  --md-primary: #CC2454;
-  --md-primary-light: #EC646C;
-  --md-primary-dark: #be2245;
+  /* Primary colors - Cyan */
+  --md-primary: #06B6D4;
+  --md-primary-light: #22D3EE;
+  --md-primary-dark: #0891B2;
   
-  /* Secondary colors - Green from custom palette */
-  --md-secondary: #B0D19A;
-  --md-secondary-dark: #6f9c5a;
+  /* Secondary colors - Amber */
+  --md-secondary: #F59E0B;
+  --md-secondary-dark: #D97706;
   
-  /* Error color */
-  --md-error: #CF6679;
+  /* Error color - Rose */
+  --md-error: #F43F5E;
+  
+  /* Success color - Emerald */
+  --md-success: #10B981;
   
   /* On colors (text on surfaces) */
-  --md-on-surface: rgba(255, 255, 255, 0.87);
-  --md-on-surface-medium: rgba(255, 255, 255, 0.60);
-  --md-on-surface-disabled: rgba(255, 255, 255, 0.38);
-  --md-on-primary: #ffffff;
+  --md-on-surface: rgba(255, 255, 255, 0.92);
+  --md-on-surface-medium: rgba(255, 255, 255, 0.70);
+  --md-on-surface-disabled: rgba(255, 255, 255, 0.45);
+  --md-on-primary: #000000;
   --md-on-secondary: #000000;
-  --md-on-error: #000000;
+  --md-on-error: #FFFFFF;
 }
 
 * {
