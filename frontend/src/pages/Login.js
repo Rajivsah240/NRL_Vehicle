@@ -35,11 +35,21 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-surface px-4 py-8">
-      {/* Background decoration - Material Design subtle glow */}
+    <div className="min-h-screen flex items-center justify-center bg-surface px-4 py-8 relative overflow-hidden">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0">
+        <img 
+          src="/assets/Refinery_Abstract.png" 
+          alt="" 
+          className="w-full h-full object-cover blur-[2px] opacity-40"
+        />
+        <div className="absolute inset-0 bg-surface/60"></div>
+      </div>
+      
+      {/* Accent glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-md w-full relative z-10">
